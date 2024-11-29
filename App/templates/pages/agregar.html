@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+    {% load static %}
+
+    {% block main %}
+        <div class="contendor_agregar">
+            <form action="" method="post" enctype="multipart/form-data">
+                <h1>Complete los Datos</h1>
+                    {{forms}}
+                    {% csrf_token %} 
+                    <input type="submit" value="Registrar" class="btn btn-success">
+                    
+                    <p class="maldonado">{{mensaje}}</p>
+            </form>
+        </div>
+    {% endblock %}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <title>BMS Motores</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Hoja de Estilos -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header class="encabezado">
+      <nav class="menu">
+        <a href="{% url 'inicio' %}"
+          ><img
+            src="{% static 'img/BMS.png' %}"
+            alt="Logo"
+            title="Logo"
+            class="logotipo"
+        /></a>
+        <a href="{% url 'agregar' %}">Agregar</a>
+        <a href="{% url 'visualizar' %}">Visualizar</a>
+        <a href="">Nosotros</a>
+        <a href="" id="contacto_btn">Contacto</a>
+      </nav>
+      <nav class="menu">
+        <a href="">carrito</a>
+     
+      </nav>
+    </header>
+    <main>
+      {% block main %}
+      <div class="maincar">
+        <img src="{% static 'img/carmain.png' %}" alt="" srcset="" />
+      </div>
+      <div class="quienes-somos">
+        
+        <div class="descripcion">
+            <h3>Nuestra Misión</h3>
+            <p>Ofrecer a nuestros clientes vehículos de alta calidad y servicio excepcional.</p>
+        </div>
+        <div class="valores">
+            <h3>Nuestros Valores</h3>
+            <p>Compromiso, honestidad y responsabilidad en cada venta.</p>
+        </div>
+        <div class="historia">
+            <h3>Nuestra Historia</h3>
+            <p>Con más de 10 años de experiencia, somos líderes en la venta de autos.</p>
+        </div>
+    </div>
+    
+      {% endblock %}
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <h2>BMS Motores</h2>
+            <p>
+              La mejor opción para la compra garantizada de vehículos. Encuentra
+              los productos que necesitas para tu auto aquí.
+            </p>
+          </div>
+
+          <div class="footer-middle">
+            <h3>Enlaces rápidos</h3>
+            <ul>
+              <li><a href="">Inicio</a></li>
+              <li><a href="">Productos</a></li>
+              <li><a href="">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-right">
+            <h3>Contacto</h3>
+            <p>
+              <strong>Dirección:</strong> Guemes 2051, Monte Grande, Buenos
+              Aires
+            </p>
+            <p><strong>Teléfono:</strong> 11 2345 6789</p>
+            <p><strong>Email:</strong> bmsmotores@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 BMS Motores. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

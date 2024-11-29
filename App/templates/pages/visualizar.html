@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+    {% load static %}
+
+    <!-- Main -->
+    {% block main %}
+    <h1 class="tit2">Descubre tu próximo auto</h1>
+        <div class="contenedor_visualizar">
+            <!-- 
+                i-- Variable para el conteo
+                forms -- Palabra enviada desde "Data" para Traer los Datos
+                for -- Ciclo por Conteo
+                Desde el Primer Elemento hasta el Ultimo elemento
+            -->
+            {% for i in forms %}
+            <div class="card" style="width: 18rem;">
+                <!-- Pasamos la Ruta de la Imagen Registrada -->
+                <img src="{{i.Imagen.url}}" class="card-img-top" alt="Imagen BD">
+                <div class="card-body">
+                    <h5 class="card-title">Modelo:  {{i.Modelo}}</h5>
+                    <h5 class="card-text">Marca:  {{i.Marca}}</h5>
+                    <h5 class="card-text">Cantidad: {{i.Cantidad}}</h5>
+                    <h5 class="card-text">Precio a contado: ${{i.Precio}}</h5>
+                   
+                    <a href="{% url 'modificar' i.Codigo %}" class="btn btn-primary">Editar</a>
+                    <a href="{% url 'eliminar' i.Codigo %}" class="btn btn-danger">Eliminar</a> 
+              </div>
+              {% endfor %}
+        </div>
+    {% endblock %}
