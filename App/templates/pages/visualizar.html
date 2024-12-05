@@ -17,14 +17,21 @@
                 <!-- Pasamos la Ruta de la Imagen Registrada -->
                 <img src="{{i.Imagen.url}}" class="card-img-top" alt="Imagen BD">
                 <div class="card-body">
-                    <h5 class="card-title">Modelo:  {{i.Modelo}}</h5>
-                    <h5 class="card-text">Marca:  {{i.Marca}}</h5>
-                    <h5 class="card-text">Cantidad: {{i.Cantidad}}</h5>
-                    <h5 class="card-text">Precio a contado: ${{i.Precio}}</h5>
-                   
+                    <h5 class="card-title">{{i.Modelo}}</h5>
+                    <h5 class="card-text">Marca: {{i.Marca}}</h5>
+                    <h5 class="card-text">${{i.Precio}}</h5>
+
+                    <a href="{% url 'detalle_vehiculo' i.Codigo %}" class="btn btn-info" style="color: aliceblue; font-size: 20px;" >Ver Más</a>
                     <a href="{% url 'modificar' i.Codigo %}" class="btn btn-primary">Editar</a>
-                    <a href="{% url 'eliminar' i.Codigo %}" class="btn btn-danger">Eliminar</a> 
-              </div>
+                    <a href="{% url 'eliminar' i.Codigo %}"  onclick="return confirmarEliminacion();" class="btn btn-danger">Eliminar</a> 
+                    <a href="{% url 'agregar_al_carrito' i.Codigo %}" class="btn btn-success">Agregar al Carrito</a>
+                </div>
               {% endfor %}
+                <script>
+                    function confirmarEliminacion() {
+                        return confirm("¿Estás seguro de que deseas eliminar este producto? Esta acción no se puede deshacer.");
+                    }  
+                    
+                </script>
         </div>
     {% endblock %}

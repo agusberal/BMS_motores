@@ -4,11 +4,21 @@
     box-sizing: border-box;
 }
 header {
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center ;
-    margin: 0px 20px 0px 20px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  background-color: white; /* Asegúrate de tener un color de fondo */
+  z-index: 1000; /* Para asegurarte de que esté encima de otros elementos */
+}
+main{
+  margin-top: 80px;
 }
 header a{
         margin-right: 10px;
@@ -19,6 +29,13 @@ header a{
 header a:hover{
         border-radius: 10px;
         color: #94abbd;
+}
+
+.carro{
+  color: #333;
+}
+.carro:hover{
+  color: #666;
 }
 .logotipo{
     width: 90px;
@@ -210,4 +227,28 @@ footer {
   text-align: center;
   font-size: 16px;
   color: #666;
+}
+.main-form{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.contendor_agregar{
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+}
+
+.contendor_agregar input, textarea{
+  width: 100%;
+  height: 40px;
+  border: #666 solid 1px;
+  border-radius: 10px;
+}
+.dat{
+  color: #000;
 }

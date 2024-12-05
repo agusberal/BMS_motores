@@ -1,0 +1,38 @@
+<!-- carrito/ver_carrito.html -->
+<h1>Carrito de Compras</h1>
+
+{% if carrito %}
+    <table>
+        <thead>
+            <tr>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Subtotal</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vehiculo in carrito %}
+            <tr>
+                <td>{{ vehiculo.modelo }}</td>
+                <td>{{ vehiculo.marca }}</td>
+                <td>{{ vehiculo.cantidad }}</td>
+                <td>${{ vehiculo.precio }}</td>
+                <td>${{ vehiculo.subtotal|floatformat:2 }}</td>
+                <td>
+                    <a href="{% url 'eliminar_del_carrito' vehiculo.id %}">Eliminar del carrito</a>
+                </td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+    
+    <h3>Total: ${{ total|floatformat:2 }}</h3>
+
+    
+{% else %}
+    <p>No hay productos en tu carrito.</p>
+{% endif %}

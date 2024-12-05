@@ -1,8 +1,7 @@
 {% extends 'index.html' %}
-
     {% load static %}
-
     {% block main %}
+    <div class="main-form">
         <div class="contendor_agregar">
             <form action="" method="post" enctype="multipart/form-data">
                 <h1>Complete los Datos</h1>
@@ -13,4 +12,5 @@
                     <p class="maldonado">{{mensaje}}</p>
             </form>
         </div>
+    </div>
     {% endblock %}
